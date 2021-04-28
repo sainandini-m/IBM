@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+     <script>
+        window.onload = init;
+        /*
+        arc( x: number, y: number, 
+        radius: number, 
+        startAngle: number, endAngle: number, 
+        anticlockwise?: boolean): void
+        */
+        // function init(){
+        //     var ctx = document.getElementById("can").getContext("2d");
+        //         //ctx.beginPath();
+        //         ctx.arc(100,100,50,0,(Math.PI / 180) * 360, false);
+        //         //ctx.closePath();
+        //         ctx.fill();
+
+        //         //ctx.beginPath();
+        //         ctx.arc(100,300,50,0,(Math.PI / 180) * 360, false);
+        //         ctx.arc(100,100,50,0,6.28319);
+        //         //ctx.closePath();
+        //         ctx.fill();
+        // }
+        function init(){
+            var ctx = document.getElementById("can").getContext("2d");
+            setInterval(function(){
+                var boxX = Math.round(Math.random() * 500);
+                var boxY = Math.round(Math.random() * 500);
+                var circleD = Math.round(Math.random() * 50);
+                ctx.beginPath();
+                var r = Math.round( Math.random() * 255 );
+                var g = Math.round( Math.random() * 255 );
+                var b = Math.round( Math.random() * 255 );
+                var a = Math.random();
+                ctx.fillStyle = "rgba("+r+","+g+","+b+","+a+")";
+                ctx.arc(boxX,boxY,circleD,0,(Math.PI / 180) * 360, false);
+                ctx.closePath();
+                ctx.fill();
+            },100)
+        }
+    </script>
+</head>
+<body>
+    <canvas id="can" width="500" height="500"></canvas>
+</body>
+</html>

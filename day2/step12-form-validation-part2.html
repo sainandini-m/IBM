@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 300px;
+            border: 1px solid slategray;
+            padding: 10px;
+        }
+        div label{
+            width: 100px;
+            display: inline-block;
+            text-align: right;
+            margin: 3px;
+        }
+        div input[type=number]{
+            width: 157px;
+            display: inline-block;
+        }
+        div button{
+            width: 100px;
+            display: inline-block;
+            margin-left: 110px;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var userage = document.getElementById("userage");
+                userage.addEventListener("input", function(){
+                    if(userage.value < 18){
+                        userage.setCustomValidity("you are to young to join us");
+                    }else if(userage.value > 80){
+                        userage.setCustomValidity("you are to old to join us");
+                    }else{
+                        userage.setCustomValidity("");
+                    }
+                })
+        }
+    </script>
+</head>
+<body>
+    <form action="#" >
+        <div class="container">
+            <div>
+                <label for="username">User Name</label>
+                <input id="username" name="username" required type="text">
+            </div>
+            <div>
+                <label for="userage">User Age</label>
+                <input id="userage" name="userage" required min="18" max="80" type="number">
+            </div>
+            <div>
+                <label for="usermail">User eMail</label>
+                <input id="usermail" 
+                name="usermail" 
+                pattern="\S+@\S+\.\S+"
+                required 
+                type="email">
+            </div>
+            <div>
+                <label for="userphone">User Phone</label>
+                <input title="expected format is ###-########" 
+                id="userphone" 
+                pattern="\d{3}-\d{8}"
+                name="userphone" 
+                required type="tel">
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

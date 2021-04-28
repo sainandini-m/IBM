@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+            /* width: 500px;
+            height: 500px; */
+        }
+    </style>
+     <script>
+        window.onload = init;
+        function init(){
+            var ctx = document.getElementById("can").getContext("2d");
+                 // fillText(string, x, y, width);
+                ctx.font = "bold 40px arial"; 
+                // transformations
+                // ctx.rotate(45 * (Math.PI / 180));
+                // ctx.scale(0.5,2);// multiplier;
+                // ctx.translate(10,50);
+                // ctx.fillText("IBM Bengaluru",0,0);
+                // ctx.drawImage(document.getElementById('raj'),0,0);
+                var img = new Image();
+                    img.src = "images/rajani.jpg";
+                    img.onload = function(){
+                        ctx.drawImage(img,0,0);
+                    }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="can" width="500" height="500"></canvas>
+    <!--     <img id="raj" src="images/rajani.jpg"> -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+    <script>
+        window.onload = function(){
+            if(navigator.geolocation){
+                document.getElementById("log").innerText = "Geolocation is available";
+                navigator.geolocation.getCurrentPosition(successfun,errorfun)
+            }else{
+                document.getElementById("log").innerText = "Please update your browser";
+            }
+        };
+
+        function successfun(position){
+            alert("success function was called");
+            document.getElementById("lon").innerText = position.coords.longitude;
+            document.getElementById("lat").innerText = position.coords.latitude;
+            document.getElementById("acc").innerText = position.coords.accuracy+" mts";
+        }
+        function errorfun(){
+            alert("error function was called");
+        }
+    </script>
+</head>
+<body>
+    <h1 id="log"></h1>
+    <ul>
+        <li>Longitude : 
+            <span id="lon"></span>
+        </li>
+        <li>Latitude : 
+            <span id="lat"></span>
+        </li>
+        <li>Accuracy in meters : 
+            <span id="acc"></span>
+        </li>
+    </ul>
+</body>
+</html>

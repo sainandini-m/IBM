@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+     <script>
+        window.onload = init;
+        // function init(){
+        //     var ctx = document.getElementById("can").getContext("2d");
+        //         setInterval(function(){
+        //             var r = Math.round( Math.random() * 255 );
+        //             var g = Math.round( Math.random() * 255 );
+        //             var b = Math.round( Math.random() * 255 );
+        //             ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+        //             ctx.clearRect(0,0,500,500);
+        //             ctx.fillRect(boxX++,50,50,50);
+        //             if(boxX > 500){
+        //                 boxX = -50;
+        //             }
+        //         },1000);
+        // }
+        function init(){
+            var ctx = document.getElementById("can").getContext("2d");
+                setInterval(function(){
+                    var boxX = Math.round( Math.random() * 500 );
+                    var boxY = Math.round( Math.random() * 500 );
+                    var boxD = Math.round( Math.random() * 50 );
+                    var r = Math.round( Math.random() * 255 );
+                    var g = Math.round( Math.random() * 255 );
+                    var b = Math.round( Math.random() * 255 );
+                    ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+                    // ctx.clearRect(0,0,500,500);
+                    ctx.fillRect(boxX,boxY,boxD,boxD);
+                },10);
+        }
+    </script>
+</head>
+<body>
+    <canvas id="can" width="500" height="500"></canvas>
+</body>
+</html>
