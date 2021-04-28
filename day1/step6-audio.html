@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function playAudio(){
+            document.getElementById("audi").play();
+            setInterval(function(){
+                document.getElementById("op").value = document.getElementById("audi").currentTime;
+            },100)
+        }
+        function pauseAudio(){
+            document.getElementById("audi").pause();
+        }
+        function forwardAudio(){
+            document.getElementById("audi").currentTime += 1;
+        }
+        function rewindAudio(){
+            document.getElementById("audi").currentTime -= 1;
+        }
+        function stopAudio(){
+            document.getElementById("audi").currentTime = 0;
+            document.getElementById("audi").pause();
+        }
+    </script>
+</head>
+<body>
+    <audio id="audi">
+        <source src="media/song.mp3">
+    </audio>
+    Play Location : <output id="op"></output>
+    <br>
+    <button onclick="playAudio()">Play</button>
+    <button onclick="pauseAudio()">Pause</button>
+    <button onclick="stopAudio()">Stop</button>
+    <button onclick="forwardAudio()">Forward</button>
+    <button onclick="rewindAudio()">Rewind</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <figure>
+        <figcaption> My Fav Heroes </figcaption>
+        <img src="images/antman.jpg" alt="antman">
+        <img src="images/blackwidow.jpg" alt="blackwidow">
+        <img src="images/hulk.jpg" alt="hulk">
+    </figure>
+    <time>12:10 PM</time>
+    <p>
+        Lorem, ipsum dolor sit <mark>amet consectetur</mark> adipisicing elit. Harum provident ullam incidunt quia rerum alias, rem illum suscipit, veritatis quidem eum iste dolorem nesciunt qui blanditiis, dicta voluptate. Eveniet, omnis?
+    </p>
+    <h1 id="box"></h1>
+    <script>
+        setInterval(function(){
+            document.getElementById("box").innerHTML = new Date();
+        },1000);
+    </script>
+</body>
+</html>
