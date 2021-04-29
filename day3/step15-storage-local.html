@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage 101</title>
+    <script>
+        function setUserName(){
+            localStorage.setItem("user", document.getElementById("tiName").value);
+        }
+        function setUserMail(){
+            localStorage.setItem("mail", document.getElementById("tiMail").value);
+        }
+        function showUserName(){
+            document.getElementById("log").innerText = localStorage.getItem("user");
+        }
+        function showUserMail(){
+            document.getElementById("log").innerText = localStorage.getItem("mail");
+        }
+        function showStorageLength(){
+            document.getElementById("log").innerText = localStorage.length;
+        }
+        function removeName(){
+           localStorage.removeItem("user");
+           alert("user name info is removed")
+        }
+        function clearStorage(){
+           localStorage.clear();
+           alert("Storage Cleared")
+        }
+        function firstKeyName(){
+           alert("Name of Key in 0 index is "+localStorage.key(0))
+        }
+    </script>
+</head>
+<body>
+    <h1>LocalStorage 101</h1>
+    <input type="text" id="tiName">
+    <button onclick="setUserName()">Save User Name</button>
+    <br>
+    <input type="text" id="tiMail">
+    <button onclick="setUserMail()">Save User Mail</button>
+    <br>
+    <h2>User Name : <span id="log"></span></h2>
+    <button onclick="showUserName()">Show User Name</button>
+    <button onclick="showUserMail()">Show User Mail</button>
+    <button onclick="showStorageLength()">Show Length of Storage</button>
+    <button onclick="removeName()">Remove Name from Storage</button>
+    <button onclick="clearStorage()">Clear Storage</button>
+    <button onclick="firstKeyName()">First Key Name</button>
+</body>
+</html>

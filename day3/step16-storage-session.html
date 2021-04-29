@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessionStorage 101</title>
+    <script>
+        function setUserName(){
+            sessionStorage.setItem("user", document.getElementById("tiName").value);
+        }
+        function setUserMail(){
+            sessionStorage.setItem("mail", document.getElementById("tiMail").value);
+        }
+        function showUserName(){
+            document.getElementById("log").innerText = sessionStorage.getItem("user");
+        }
+        function showUserMail(){
+            document.getElementById("log").innerText = sessionStorage.getItem("mail");
+        }
+        function showStorageLength(){
+            document.getElementById("log").innerText = sessionStorage.length;
+        }
+        function removeName(){
+           sessionStorage.removeItem("user");
+           alert("user name info is removed")
+        }
+        function clearStorage(){
+           sessionStorage.clear();
+           alert("Storage Cleared")
+        }
+        function firstKeyName(){
+           alert("Name of Key in 0 index is "+sessionStorage.key(0))
+        }
+    </script>
+</head>
+<body>
+    <h1>sessionStorage 101</h1>
+    <input type="text" id="tiName">
+    <button onclick="setUserName()">Save User Name</button>
+    <br>
+    <input type="text" id="tiMail">
+    <button onclick="setUserMail()">Save User Mail</button>
+    <br>
+    <h2>User Name : <span id="log"></span></h2>
+    <button onclick="showUserName()">Show User Name</button>
+    <button onclick="showUserMail()">Show User Mail</button>
+    <button onclick="showStorageLength()">Show Length of Storage</button>
+    <button onclick="removeName()">Remove Name from Storage</button>
+    <button onclick="clearStorage()">Clear Storage</button>
+    <button onclick="firstKeyName()">First Key Name</button>
+    <div contenteditable style="border: 1px solid black; padding: 10px;">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit nihil, dolores tempore alias at perferendis non cupiditate odio possimus quidem esse sint eaque officiis in reiciendis laudantium asperiores voluptatibus voluptatem.
+    </div>
+</body>
+</html>
