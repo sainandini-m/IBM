@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+       img[width="99"]{
+           border: 5px solid red;
+       }
+       img[title]{
+           border: 5px dashed red;
+       }
+       img[alt *="e"]{
+           border: 10px dashed yellowgreen;
+       }
+       img[alt ^="d"]{
+           border: 10px dashed tomato;
+       }
+       img[alt $="man"]{
+           border: 10px dashed turquoise;
+       }
+    </style>
+</head>
+<body>
+   <img width="100" src="images/antman.jpg"         alt="antman" >
+   <img width="100" src="images/batman.jpg"         alt="batman" >
+   <img width="100" src="images/blackpanther.jpg"   alt="blackpanther" >
+   <img width="100" src="images/blackwidow.jpg"     alt="blackwidow" >
+   <img title="captain" width="100" src="images/captainamerica.jpg" alt="captainamerica" >
+   <img width="100" src="images/captainmarvel.jpg"  alt="captainmarvel" >
+   <img width="99" src="images/deadpool.jpg"       alt="deadpool" >
+   <img width="100" src="images/doctorstrange.jpg"  alt="doctorstrange" >
+   <img width="100" src="images/falcon.jpg"         alt="falcon" >
+   <img width="100" src="images/hawkeye.jpg"        alt="hawkeye" >
+   <img width="100" src="images/hulk.jpg"           alt="hulk" >
+   <img width="100" src="images/scarletwitch.jpg"   alt="scarletwitch" >
+   <img width="100" src="images/thor.jpg"           alt="thor" >
+   <img width="100" src="images/vision.jpg"         alt="vision" >
+</body>
+</html>

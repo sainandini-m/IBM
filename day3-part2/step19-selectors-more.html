@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+       input:hover{
+           background-color: orchid;
+       }
+       input:focus{
+           background-color: palegreen;
+       }
+       input:active{
+           background-color: tomato;
+       }
+       p:lang(en){
+           background-color: teal;
+       }
+       p:lang(fr){
+           background-color: yellow;
+       }
+       p:lang(es){
+           background-color: rebeccapurple;
+       }
+       article:first-child{
+           border: 5px solid grey;
+       }
+       article:last-child{
+           border: 5px solid grey;
+       }
+
+       ul+p{
+           border: 5px dotted red;
+       }
+       ul~p{
+           border: 5px dotted red;
+       }
+       ul *{
+           border: 2px solid hotpink;
+       }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <hr>
+    <p lang="en">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque alias nobis deserunt ratione dolorem non, dignissimos ut voluptas dolorum. Voluptates quidem, numquam quas praesentium aliquid quasi ipsa deserunt unde nisi.
+    </p>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+    <p lang="es">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque alias nobis deserunt ratione dolorem non, dignissimos ut voluptas dolorum. Voluptates quidem, numquam quas praesentium aliquid quasi ipsa deserunt unde nisi.
+    </p>
+    <p lang="fr">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque alias nobis deserunt ratione dolorem non, dignissimos ut voluptas dolorum. Voluptates quidem, numquam quas praesentium aliquid quasi ipsa deserunt unde nisi.
+    </p>
+    <section>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum iure asperiores sit, sunt reiciendis animi eveniet perspiciatis assumenda dolorem modi obcaecati quisquam quos consequuntur sint distinctio corporis? Beatae, vitae rem!
+        </div>
+        <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nemo, sed quibusdam repellat voluptate adipisci error quis impedit odit vero magnam consequuntur dicta a non nulla ducimus maiores suscipit minima!
+        </article>
+        <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nemo, sed quibusdam repellat voluptate adipisci error quis impedit odit vero magnam consequuntur dicta a non nulla ducimus maiores suscipit minima!
+        </article>
+        <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nemo, sed quibusdam repellat voluptate adipisci error quis impedit odit vero magnam consequuntur dicta a non nulla ducimus maiores suscipit minima!
+        </article>
+    </section>
+</body>
+</html>
