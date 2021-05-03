@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: 1px solid black;
+            margin: 0px;
+        }
+        section{
+            background-color: gray;
+            width: 100%;
+        }
+        section article{
+            background-color: khaki;
+        }
+        .clearFix{
+            content: '';
+            display: block;
+            height: 10px;
+            clear: both;
+        }
+        .nofloatbox{
+            clear: both;
+            margin-top: 5px;
+            background-color: deeppink;
+            border: 1px solid transparent;
+        }
+        .nofloatbox h1{
+            margin : 0px;
+        }
+        .box{
+            width: 300px;
+            float: left;
+            margin-left: 10px;
+        }
+        .container{
+            width: 940px;
+            margin: auto;
+        }
+        header, footer{
+            background-color: darkslateblue;
+            padding: 10px;
+        }
+        header h1{
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                IBM Bengaluru
+            </h1>
+        </header>
+        <section>
+            <article class="box">
+                <h1>Box 1</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+            </article>
+            <article class="box">
+                <h1>Box 2</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+            </article>
+            <article class="box">
+                <h1>Box 3</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+            </article>
+            <div class="clearFix"></div>
+            <article class="nofloatbox">
+                <h1>Box 4</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur libero culpa sint, fuga tempore fugit, quasi quidem maxime nihil exercitationem ipsa, voluptatum iusto ducimus veniam ex tenetur beatae ipsum!
+            </article>
+    </section>
+        <footer>
+            &copy; copyrights reserved by IBM India 
+        </footer>
+    </div>
+        
+</body>
+</html>
