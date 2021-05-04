@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByTagName("button")[0]
+            .addEventListener("click", clickHandler);
+
+            document.getElementsByTagName("button")[1]
+            .addEventListener("click", stopHandler);
+        })
+        function clickHandler(){
+            document.getElementById("log").innerText += "button was clicked \n";
+        }
+        function stopHandler(){
+            document.getElementById("log").innerText = '';
+            document.getElementsByTagName("button")[0]
+            .removeEventListener("click", clickHandler);
+        }
+    </script>
+</head>
+<body>
+    <button>Click Me</button>
+    <button>Stop</button>
+    <h1 id="log"></h1>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [6,12,78,91,22,5,8,34,65,100,19,24];
+
+        // var valueGreaterThan25 = arr.filter(function(v,i,a){
+        //     return v > 25
+        // });
+
+        var greaterThan5 = arr.every(function(v,i,a){
+            console.log("every ",i);
+            return v > 4;
+        });
+
+        var fewGreaterThan5 = arr.some(function(v,i,a){
+            console.log(i);
+            return v > 90;
+        });
+
+        console.log(arr.join());
+        // console.log(valueGreaterThan25.toString());
+        console.log(greaterThan5);
+        console.log(fewGreaterThan5);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

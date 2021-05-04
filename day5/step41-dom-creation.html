@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box div{
+            width: 100px;
+            height: 100px;
+            background-color: orangered;
+            margin: 5px;
+            float: left;
+            font-family: arial;
+            font-size: 36px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+    <script>
+        var count = 1;
+        var box;
+        document.addEventListener("DOMContentLoaded", function(){
+            box = document.getElementById("box");
+            document.getElementsByTagName("button")[0]
+            .addEventListener("click", addBoxFun);
+
+            document.getElementsByTagName("button")[1]
+            .addEventListener("click", removeBoxFun);
+
+            document.getElementsByTagName("button")[2]
+            .addEventListener("click", removeBoxLastFun);
+
+            box.addEventListener("click", boxClickListener);
+        });
+        function addBoxFun(){
+            // var elm = document.createElement("div");
+            //     elm.innerText = count;
+            //     box.appendChild(elm);
+            // box.innerHTML += "<div onclick='removebox(this)'>"+count+"</div>";
+            box.innerHTML += "<div>"+count+"</div>";
+            count++;
+        }
+        function removeBoxFun(){
+            var elm = box.firstChild;
+            if(elm){
+                box.removeChild(elm);
+                count--;
+            }else{
+                alert("nothing to remove")
+            }
+        }
+        function removeBoxLastFun(){
+            var elm = box.lastChild;
+            if(elm){
+                box.removeChild(elm);
+                count--;
+            }else{
+                alert("nothing to remove")
+            }
+        }
+        function boxClickListener(evt){
+            box.removeChild(evt.target);
+            count--;
+        }
+    </script>
+</head>
+<body>
+   <button>Add Box</button>
+   <button>Remove Box First</button>
+   <button>Remove Box Last</button>
+   <div id="box"></div>
+</body>
+</html>

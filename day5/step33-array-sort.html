@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var arr = [6,2,7,8,3,1,9];
+        var arr = [6,12,78,91,22,5,8,34,65,100,19,24];
+        // console.log(arr.sort());
+        function sortNum(num1, num2){
+            if(num1 > num2){
+                return 1;
+            }else if(num1 < num2){
+                return -1;
+            }else{
+                return 0;
+            }
+        }
+        console.log(arr.sort(sortNum));
+
+        var avengers = [
+            { title : "Ironman", city : "New York" , power : 45},
+            { title : "Captain America", city : "New York" , power : 56},
+            { title : "Rajani", city : "Solapur" , power : 100},
+            { title : "Hulk", city : "Japan" , power : 44},
+            { title : "Wonder Woman", city : "Themyscira" , power : 80},
+            { title : "Black Widow", city : "Bihar" , power : 30},
+            { title : "Doctor Strange", city : "New York" , power : 65},
+            { title : "Black Panther", city : "New York" , power : 65},
+            { title : "Hawk Eye", city : "New Jersey" , power : 85}
+        ];
+        function heroPowerSort(avenger1, avenger2){
+            if(avenger1.power > avenger2.power){
+                return 1;
+            }else if(avenger1.power < avenger2.power){
+                return -1;
+            }else{
+                return 0;
+            }
+        };
+        console.log( avengers.sort(heroPowerSort) );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

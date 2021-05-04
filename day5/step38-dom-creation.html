@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload = init;
+        // window.addEventListener("load", init);
+        // window.removeEventListener("load",init);
+        // document.addEventListener("DOMContentLoaded", init);
+        // function init(){
+        //     document.getElementsByTagName("h1")[0].innerText = "welcome to your life";
+        // };
+
+        function fun1(){
+            console.log("First Function was called")
+        }
+        function fun2(){
+            console.log("Second Function was called")
+        }
+        function fun3(){
+            console.log("Third Function was called")
+        }
+        window.onload = fun1;
+        window.addEventListener("load", fun2)
+        document.addEventListener("DOMContentLoaded", fun3);
+    </script>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>
