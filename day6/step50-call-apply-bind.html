@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let ironman = {
+            title : "Ironman",
+            firstname : "Tony",
+            lastname : "Stark",
+            city : "New York",
+            fullname : function(msg){
+                return msg+" ~ "+this.firstname+" "+this.lastname;
+            }
+        };
+        let antman = {
+            title : "Antman",
+            firstname : "Scott",
+            lastname : "Lang",
+            city : "New York"
+        };
+        let captainMarvel = {
+            title : "Captain Marvel",
+            firstname : "Carol",
+            lastname : "Danvers",
+            city : "Boston"
+        };
+
+        // console.log(ironman.firstname);
+        // console.log(antman.firstname);
+        // console.log(captainMarvel.firstname);
+        // console.log(ironman.fullname());
+
+        // console.log(ironman.fullname());
+        // console.log(ironman.fullname.call(antman));
+        // console.log(ironman.fullname.call(captainMarvel));
+
+        // console.log(ironman.fullname());
+        // console.log(ironman.fullname.apply(antman));
+        // console.log(ironman.fullname.apply(captainMarvel));
+
+        // console.log(ironman.fullname());
+        // console.log(ironman.fullname.bind(antman)());
+        // console.log(ironman.fullname.bind(captainMarvel)());
+
+       //  console.log(ironman.fullname("Hi"));
+       // console.log(ironman.fullname.call(antman, "Hello"))
+       // console.log(ironman.fullname.apply(antman, ["Hello"]))
+
+       var antfun = ironman.fullname.bind(antman);
+       
+       console.log(antfun('Ola'))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

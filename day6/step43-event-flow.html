@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cb{
+            display: block;
+            margin: 20px auto;
+        }
+        main{
+            width: 600px;
+            height: 400px;
+            background-color: tomato;
+            margin: 50px auto;
+            border: 1px solid transparent;
+        }
+        section{
+            width: 400px;
+            height: 250px;
+            background-color: lightsteelblue;
+            margin: 70px auto;
+            border: 1px solid transparent;
+        }
+        article{
+            width: 200px;
+            height: 100px;
+            background-color: slateblue;
+            margin: 70px auto;
+            border: 1px solid transparent;
+        }
+        article button{
+            margin: 40px auto;
+            display: block;
+        }
+        #log{
+            text-align: center;
+            font-family: Arial;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelector("main").addEventListener("click", clickHandler, true);
+            document.querySelector("section").addEventListener("click", clickHandler, true);
+            document.querySelector("article").addEventListener("click", clickHandler, true);
+            document.querySelector("main").addEventListener("click", clickHandler);
+            document.querySelector("section").addEventListener("click", clickHandler);
+            document.querySelector("article").addEventListener("click", clickHandler);
+            document.querySelector("button").addEventListener("click", clickHandler);
+        });
+        function clickHandler(event){
+            if(document.querySelector("#cb").checked){
+                document.querySelector("#log").innerHTML += " you clicked the "+event.target.tagName+" Event Phase "+event.eventPhase+" Event Current Target "+event.currentTarget.tagName+"<br/>";
+            }else{
+                event.stopPropagation();
+                document.querySelector("#log").innerHTML += "event stopped by main tag"
+            }
+        };
+        // function sectionClickHandler(event){
+        //     document.querySelector("#log").innerHTML += " you clicked the "+event.target.tagName+" Event Phase "+event.eventPhase+" Event Current Target "+event.currentTarget.tagName+"<br/>";
+        // };
+        // function articleClickHandler(event){
+        //     document.querySelector("#log").innerHTML += " you clicked the "+event.target.tagName+" Event Phase "+event.eventPhase+" Event Current Target "+event.currentTarget.tagName+"<br/>";
+        // };
+        // function buttonClickHandler(event){
+        //     document.querySelector("#log").innerHTML += " you clicked the "+event.target.tagName+" Event Phase "+event.eventPhase+" Event Current Target "+event.currentTarget.tagName+"<br/>";
+        // };
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="cb">
+    <main>
+        <section>
+            <article>
+                <button>Click Me</button>
+            </article>
+        </section>
+    </main>
+    <div id="log"></div>
+</body>
+</html>

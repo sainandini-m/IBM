@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        // var cart = {
+        //     name : "cart",
+        //     showCostPrice : function(){
+        //         return 100;
+        //     },
+        //     showSellingPrice : function(){
+        //         // console.log(this.name);
+        //         var scope = this;
+        //         var calculateProfit = function(){
+        //             return scope.showCostPrice() * 0.2;
+        //         }
+        //         return this.showCostPrice() + calculateProfit();
+        //     }
+        // };
+        // console.log(cart.showSellingPrice());// 120
+
+                
+        // var cart = {
+        //     name : "cart",
+        //     showCostPrice : function(){
+        //         return 100;
+        //     },
+        //     showSellingPrice : function(){
+        //         var calculateProfit = function(scope){
+        //             return scope.showCostPrice() * 0.2;
+        //         }
+        //         return this.showCostPrice() + calculateProfit(this);
+        //     }
+        // };
+        // console.log(cart.showSellingPrice());// 120
+
+        // var cart = {
+        //     name : "cart",
+        //     showCostPrice : function(){
+        //         return 100;
+        //     },
+        //     showSellingPrice : function(){
+        //         var calculateProfit = function(){
+        //             return this.showCostPrice() * 0.2;
+        //         }
+        //         return this.showCostPrice() + calculateProfit.call(this);
+        //     }
+        // };
+        // console.log(cart.showSellingPrice());// 120
+
+
+        // var cart = {
+        //     name : "cart",
+        //     showCostPrice : function(){
+        //         return 100;
+        //     },
+        //     showSellingPrice : function(){
+        //         var calculateProfit = function(){
+        //             return this.showCostPrice() * 0.2;
+        //         }
+        //         return this.showCostPrice() + calculateProfit.apply(this);
+        //     }
+        // };
+        // console.log(cart.showSellingPrice());// 120
+
+
+        // var cart = {
+        //     name : "cart",
+        //     showCostPrice : function(){
+        //         return 100;
+        //     },
+        //     showSellingPrice : function(){
+        //         var calculateProfit = function(){
+        //             return this.showCostPrice() * 0.2;
+        //         }
+        //         return this.showCostPrice() + calculateProfit.bind(this)();
+        //     }
+        // };
+        // console.log(cart.showSellingPrice());// 120
+
+        var cart = {
+            name : "cart",
+            showCostPrice : function(){
+                return 100;
+            },
+            showSellingPrice : function(){
+                var calculateProfit = () => {
+                    return this.showCostPrice() * 0.2;
+                }
+                return this.showCostPrice() + calculateProfit();
+            }
+        };
+        console.log(cart.showSellingPrice());// 120
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function adder(num1, num2, num3){
+        //     return num1 + num2 + num3;
+        // };
+        // function adder(num1, num2, num3){
+        //     var n1 = num1 || 0 ;
+        //     var n2 = num2 || 0 ;
+        //     var n3 = num3 || 0 ;
+        //     return n1 + n2 + n3;
+        // };
+
+        // default parameters
+        // function adder(num1 = 0, num2 = 0, num3 = 0){
+        //     return num1 + num2 + num3;
+        // };
+        // console.log(adder(5,6)); // 11 
+
+        // function adder(){
+        //     let total = 0;
+        //     for(let i = 0; i < arguments.length; i++){
+        //         total += arguments[i];
+        //     }
+        //     return total;
+        // };
+
+        // rest arguments
+        function adder(...nums){
+            let total = 0;
+            for(let i = 0; i < nums.length; i++){
+                total += nums[i];
+            }
+            return total;
+        };
+        var vals = [5,6,7,8,9];
+        // console.log(adder(vals[0],vals[1],vals[2],vals[3],vals[4])); // 5
+        // spread operator
+        console.log(adder(...vals)); // 5
+    </script>
+</head>
+<body>
+</body>
+</html>

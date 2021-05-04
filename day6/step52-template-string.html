@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let avengers = [{
+            title : "Ironman",
+            firstname : "Tony",
+            lastname : "Stark",
+            city : "New York"
+        },{
+            title : "Antman",
+            firstname : "Scott",
+            lastname : "Lang",
+            city : "New York"
+        },{
+            title : "Captain Marvel",
+            firstname : "Carol",
+            lastname : "Denvers",
+            city : "Boston"
+        }];
+        document.addEventListener("DOMContentLoaded", function(){
+            for(let i = 0; i<avengers.length; i++){
+                // document.querySelector(".container").innerHTML += "<div class='box'> <h1 class='ht'>"+avengers[i].title+"</h1><h2><span class='hf'>"+avengers[i].firstname+"</span> <span class='hl'>"+avengers[i].lastname+"</span></h2><h2 class='hc'>"+avengers[i].city+"</h2> </div>";
+                document.querySelector(".container").innerHTML += `<div class="box"> 
+                                                                    <h1 class="ht">${avengers[i].title}</h1>
+                                                                    <h2>
+                                                                    <span class="hf">${ avengers[i].firstname}</span> 
+                                                                    <span class="hl">${ avengers[i].lastname}</span>
+                                                                    </h2>
+                                                                    <h2 class="hc">${ avengers[i].city}</h2> 
+                                                                  </div>`;
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

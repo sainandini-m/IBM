@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var hero = {
+            title : "Batman",
+            city : "Gotham",
+            fname : "Bruce",
+            lname : "Wayne"
+        };
+        // var uppercaseHero = hero;
+        //     uppercaseHero.title = "BATMAN";
+        // console.log(uppercaseHero.title);
+        // console.log(hero.title);
+
+        // var htitle = hero.title;
+        // var hcity = hero.city;
+        // var hfname = hero.fname;
+        // var hlname = hero.lname;
+
+        // var htitle = hero.title, 
+        //     hcity = hero.city, 
+        //     hfname = hero.fname, 
+        //     hlname = hero.lname;
+
+        var { title, city, fname, lname } = hero;
+
+        title = "BATMAN";
+
+        console.log(hero.title);
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelector(".htitle").textContent = title;
+            document.querySelector(".hcity").textContent = city;
+            document.querySelector(".hfname").textContent = fname;
+            document.querySelector(".hlname").textContent = lname;
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h1 class="htitle"></h1>
+        <h2>City : <span class="hcity"></span></h2>
+        <h2>Full Name : <span class="hfname"></span> <span class="hlname"></span></h2>
+    </div>
+</body>
+</html>
