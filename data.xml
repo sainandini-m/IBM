@@ -1,0 +1,141 @@
+<heroes>
+    <hero>
+        <title>AsthaGupta</title>
+        <firstname>Astha</firstname>
+        <lastname>Gupta</lastname>
+        <city>Kolkata</city>
+        <power>15</power>
+    </hero>
+    <hero>
+        <title>JB</title>
+        <firstname>Jayita</firstname>
+        <lastname>Bhattacharyya</lastname>
+        <city>Asansol</city>
+        <power>10</power>
+    </hero>
+ <hero>
+        <title>Zareen Ishtiaque</title>
+        <firstname>Zareen</firstname>
+        <lastname>Ishtiaque</lastname>
+        <city>Kolkata</city>
+        <power>9</power>
+    </hero>
+  <hero>
+        <title>Sainandini Mishra</title>
+        <firstname>Sainandini</firstname>
+        <lastname>Mishra</lastname>
+        <city>New Delhi</city>
+        <power>16</power>
+    </hero>
+<hero>
+        <title>Tanvee Srivastava</title>
+        <firstname>Tanvee</firstname>
+        <lastname>Srivastava</lastname>
+        <city>Faridabad</city>
+        <power>16</power>
+    </hero>
+ <hero>
+        <title>Rach</title>
+        <firstname>Rachana</firstname>
+        <lastname>Rajesh</lastname>
+        <city>Bangalore</city>
+        <power>10</power>
+    </hero>
+<hero>
+        <title>YashMaheshwari</title>
+        <firstname>Yash</firstname>
+        <lastname>Maheshwari</lastname>
+        <city>Kota</city>
+        <power>6</power>
+    </hero>
+<hero>
+        <title>Baishakhi Das</title>
+        <firstname>Baishakhi</firstname>
+        <lastname>Das</lastname>
+        <city>Kolkata</city>
+        <power>15</power>
+    </hero>
+<hero>
+        <title>Harleen Kaur</title>
+        <firstname>Harleen</firstname>
+        <lastname>Kaur</lastname>
+        <city>Jaipur</city>
+        <power>15</power>
+    </hero>
+<hero>
+        <title>Praseeda Chokkapu</title>
+        <firstname>Praseeda</firstname>
+        <lastname>Chokkapu</lastname>
+        <city>Parvathipuram</city>
+        <power>15</power>
+    </hero>
+    <hero>
+        <title>GargiChakraborty</title>
+        <firstname>Gargi</firstname>
+        <lastname>Chakraborty</lastname>
+        <city>Kolkata</city>
+        <power>11</power>
+    </hero>
+        <hero>
+        <title>SwastiPadhi</title>
+        <firstname>Swasti</firstname>
+        <lastname>Padhi</lastname>
+        <city>Bhubaneswar</city>
+        <power>13</power>
+    </hero>
+    <hero>
+        <title>ShivamVatsa</title>
+        <firstname>Shivam</firstname>
+        <lastname>vatsa</lastname>
+        <city>Jaipur</city>
+        <power>6</power>
+    </hero>
+    <hero><title>Amulya George</title>
+        <firstname>Amulya</firstname>
+        <lastname>George</lastname>
+        <city>indore</city>
+        <power>21</power>
+    </hero>
+    <hero>
+        <title>Shwetha.G.P</title>
+        <firstname>Shwetha</firstname>
+        <lastname>G.P</lastname>
+        <city>Bangalore</city>
+        <power>16</power>
+    </hero>
+    <hero>
+        <title>Sweety</title>
+        <firstname>Sweety</firstname>
+        <lastname>Kumari</lastname>
+        <city>Faridabad</city>
+        <power>16</power>
+    </hero>
+    <hero>
+        <title>Arya Ashok</title>
+        <firstname>Arya</firstname>
+        <lastname>Ashok</lastname>
+        <city>Kottayam</city>
+        <power>14</power>
+    </hero>
+     <hero>
+        <title>Neha Ravindr</title>
+        <firstname>Neha</firstname>
+        <lastname>R</lastname>
+        <city>Hubli</city>
+        <power>9</power>
+    </hero>
+    <hero>
+        <title>Jenila S</title>
+        <firstname>Jenila</firstname>
+        <lastname>S</lastname>
+        <city>Chennai</city>
+        <power>5</power>
+    </hero>
+    <hero>
+        <title>Thumathi Durai</title>
+        <firstname>Thumathi</firstname>
+        <lastname>Durai</lastname>
+        <city>Tamil nadu</city>
+        <power>10</power>
+    </hero>
+</heroes>
