@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: Trebuchet MS;
+            font-weight: bold;
+        }
+        .box{
+            width: 290px;
+            overflow: auto;
+            background-color: dimgray;
+            color: floralwhite;
+            margin: auto;
+            font-family: arial;
+            font-size: 16px;
+            text-align: justify;
+            padding: 10px;
+        }
+        button{
+            width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+        .hpanel{
+            width: 250px;
+            background-color: #282828;
+            padding: 10px;
+            font-family: verdana;
+            margin: 10px;
+        }
+        .hpanel .ht{
+            font-size: 18px;
+            font-weight: bold;
+            color: lightyellow;
+        }
+        .hpanel .hc{
+            font-size: 18px;
+            font-weight: bold;
+            color: lightsteelblue;
+        }
+        .hpanel .hfullname{
+            font-size: 18px;
+            font-weight: bold;
+            color: powderblue;
+        }
+    </style>
+    <script>
+        var xhr;
+        function ajaxHandler(){
+                console.log(xhr.readyState);
+                if(xhr.status == 200 && xhr.readyState == 4){
+                    document.querySelector(".box").innerHTML = "";
+                    let data = JSON.parse(xhr.responseText);
+                    for(let i = 0; i < data.heroes.length; i++){
+                        document.querySelector(".box").innerHTML += `
+                        <div class="hpanel">
+                            <div class="ht">${data.heroes[i].title}</div>
+                            <hr>
+                            <div class="hc">${data.heroes[i].city}</div>
+                            <div class="hfullname"><span class="hfn"> ${data.heroes[i].firstName}</span> <span class="hln"> ${data.heroes[i].lastName} </span></div>
+                            <div> ${data.heroes[i].empCode} </div>
+                        </div>
+                        `;
+                    }
+                    document.getElementById("log").innerHTML += "XHR ReadyState : "+xhr.readyState+" | XHR Status : "+xhr.status+" | XHR Status Text : "+xhr.statusText+'<br/>';
+                }else{
+                    document.getElementById("log").innerHTML += "XHR ReadyState : "+xhr.readyState+" | XHR Status : "+xhr.status+" | XHR Status Text : "+xhr.statusText+'<br/>';
+                }
+            };
+
+        document.addEventListener("DOMContentLoaded", function(){
+            xhr = new XMLHttpRequest();
+            document.getElementsByTagName("button")[0].addEventListener("click", function(event){
+                xhr.addEventListener("readystatechange",ajaxHandler);
+                xhr.open("get","data/data.json",true);
+                xhr.send();
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>AJAX JSON Data</h1>
+    <button>Get Data</button>
+    <div class="box"></div>
+    <hr>
+    <h1 id="log"></h1>
+</body>
+</html>

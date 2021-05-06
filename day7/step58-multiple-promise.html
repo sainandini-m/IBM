@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <script>
+        let asyncCallTwo = function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(false){
+                        resolve("Success : Resolve Data");
+                    }else{
+                        reject("Error : Reject Data");
+                    }
+                },2000);
+            });
+            return promise;
+        }
+        let asyncCallOne = function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(false){
+                        resolve(
+                            asyncCallTwo()
+                        );
+                    }else{
+                        reject("Error : Reject Data");
+                    }
+                },2000);
+            });
+            return promise;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

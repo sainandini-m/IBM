@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: Trebuchet MS;
+            font-weight: bold;
+        }
+        .box{
+            width: 800px;
+            height: 300px;
+            overflow: auto;
+            background-color: dimgray;
+            color: floralwhite;
+            margin: auto;
+            font-family: arial;
+            font-size: 16px;
+            text-align: justify;
+            padding: 10px;
+        }
+        button{
+            width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                console.log(xhr.readyState);
+                if(xhr.status == 200 && xhr.readyState == 4){
+                    // alert(xhr.responseText);
+                    // document.getElementsByClassName("box")[0].innerText = xhr.responseText;
+                    document.querySelector(".box").innerText = xhr.responseText;
+                }else{
+                    document.getElementById("log").innerHTML += "XHR Status : "+xhr.status+" | XHR Status Text : "+xhr.statusText+'<br/>';
+                }
+            }
+        document.addEventListener("DOMContentLoaded", function(){
+            xhr.open("get","data/data.txt",false);
+            document.getElementsByTagName("button")[0].addEventListener("click", function(){
+                xhr.send();
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <h1>AJAX Basics</h1>
+    <button>Get Data</button>
+    <div class="box"></div>
+    <hr>
+    <h1 id="log"></h1>
+</body>
+</html>

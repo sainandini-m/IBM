@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var obj1 = {};
+        // var obj2 = new Object();
+        // var obj3 = Object.create(null);
+        // console.log(typeof obj1);
+        // console.log(typeof obj2);
+        // console.log(typeof obj3);
+
+        // let person = {
+        //     city : "Bengaluru"
+        // }
+
+        // let hero = Object.create(person);
+        // console.log(hero.city);
+        // person.city = "Mysore";
+        // console.log(hero.city);
+        // hero.city = "Hyderabad";
+        // console.log(hero.city);
+        // console.log(person.city);
+
+        // let person = {
+        //     city : "Bengaluru"
+        // }
+        // console.log(person.city);
+        // person.city = "Mysore";
+        // console.log(person.city);
+
+        // let hero = Object.create(null);
+        // hero.fname = "Tony";
+        // console.log(hero.fname);// tony
+        // hero.fname = "Iron Monger";
+        // console.log(hero.fname);// tony
+        // Object.defineProperty(hero,"fname",{
+        //     value : "Tony",
+        //     writable : true,
+        //     enumerable : true,
+        //     configurable : true
+        // });
+        // hero.fname = "Iron Monger";
+        // console.log(hero.fname);
+        // Object.defineProperty(hero,"fname",{
+        //     writable : false,
+        //     enumerable : false
+        // });
+        // hero.fname = "Iron Man";
+        // console.log(hero.fname);
+        // for(let prop in hero){
+        //     console.log(prop, hero[prop]);
+        // }
+
+         let hero = Object.create(null);
+            Object.defineProperties(hero,{
+                fname : {
+                    value : "Tony",
+                    enumerable : true
+                },
+                lname : {
+                    value : "Stark",
+                    enumerable : true
+                },
+                city : {
+                    value : "New York",
+                    writable : true
+                },
+                power : {
+                    value : 7
+                },
+                title : {
+                    value : "Ironman",
+                    enumerable : true
+                },
+                accessCity : {
+                    get : function(){
+                        return this.city;
+                    },
+                    set : function(ncity){
+                        this.city = ncity;
+                    }
+                }
+            });
+            
+            for(let prop in hero){
+                console.log(prop, hero[prop]);
+            } ;
+            console.log(hero.accessCity);
+            hero.accessCity = "Chicago";
+            console.log(hero.accessCity);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

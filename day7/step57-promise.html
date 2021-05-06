@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <script>
+        var promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(false){
+                    resolve("Success : Resolve Data");
+                }else{
+                    reject("Error : Reject Data");
+                }
+            },2000);
+        });
+
+/*         
+        promise.then(function(res){
+            console.log(res);
+        }).catch(function(error){
+            console.log(error)
+        }); 
+        
+*/
+/*         
+        promise.then(
+          function(res){
+            console.log(res);
+        },function(error){
+            console.log(error)
+        }
+        ); 
+*/
+
+        promise
+        .then(
+        function(res){
+            console.log("First Then : ",res);
+            return res.toUpperCase();
+        }, function(error){
+            console.log("First Then : ",error);
+            return error.toUpperCase();
+        })
+        .then(
+         function(res){
+            console.log("Second Then : ", res);
+        }, 
+        function(error){
+            console.log("Second Then : ", error);
+        }).catch(function(error){
+            console.log("Catch : ",error);
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
