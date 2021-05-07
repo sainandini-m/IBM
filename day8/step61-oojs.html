@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function Hero(fname, lname){
+            // Private
+            var power = 7;
+            //-----------
+
+            // Public
+            this.firstName = fname;
+            this.lastName = lname;
+
+            /* this.fullName = function(){
+                return this.firstName+" "+this.lastName;
+            } */
+        };
+        Hero.prototype.version = 1001;
+
+        Hero.prototype.fullName = function(){
+                return this.firstName+" "+this.lastName;
+        };
+
+        var hero1 = new Hero("bruce", "wayne");
+        console.log(hero1.firstName, hero1.lastName, hero1.fullName(), hero1.version);
+        var hero2 = new Hero("tony", "stark");
+        console.log(hero2.firstName, hero2.lastName, hero2.fullName(), hero2.version);
+
+        Hero.prototype.version = 2002;
+
+        console.log(hero2.version);
+
+        console.log(hero1.fullName);
+        console.log(hero2.fullName);
+        console.log(hero1.fullName === hero2.fullName);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

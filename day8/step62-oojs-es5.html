@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person{
+            age = 0;
+            constructor(nage){
+                this.age = nage;
+            }
+            sayAge(){
+                return this.age;
+            }
+            static version = "1001";
+        }
+        class Hero extends Person{
+            firstName = "guest";
+            lastName = "guest";
+            _power = 0; 
+            city = "Bengaluru";
+
+            constructor(fname, lname, pow, hage){
+                super(hage);
+                console.log("In Constructor ", this.firstName);
+                this.firstName = fname;
+                this.lastName = lname;
+                this._power = pow;
+            }
+            fullname(){
+                return this.firstName+" "+this.lastName;
+            }
+            powerMultiplier(){
+                return this._power * 10;
+            }
+            getCity(){
+                return this.city;
+            }
+            get power(){
+                return this._power;
+            }
+            set power(npower){
+                this._power = npower;
+            }
+            static saymessage(){
+                return "I am Batman";
+            }
+        };
+
+        let hero1 = new Hero("Bruce", "Wayne",7, 25);
+        let hero2 = new Hero("Tony", "Stark",6, 26);
+        console.log(hero1.firstName, hero1.lastName, hero1.fullname(), hero1.power)
+        console.log(hero2.firstName, hero2.lastName, hero2.fullname(), hero2.power)
+        console.log(hero1.powerMultiplier());
+        console.log(hero1.power);
+        hero1.power = 8;
+        console.log(hero1.power);
+        console.log(hero1.city);
+        console.log( Hero.saymessage() );
+        console.log(hero1.age);
+        console.log(hero2.sayAge());
+        console.log(Person.version);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

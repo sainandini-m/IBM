@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Promise</title>
+    <script>
+        let asyncCallTwo = function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(false){
+                        resolve("Success : Resolve Data from asyncCallTwo");
+                    }else{
+                        reject("Error : Reject Data from asyncCallTwo");
+                    }
+                },4000);
+            });
+            return promise;
+        }
+        let asyncCallOne = function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve(
+                            resolve("Success : Resolve Data from asyncCallOne")
+                        );
+                    }else{
+                        reject("Error : Reject Data from asyncCallOne");
+                    }
+                },2000);
+            });
+            return promise;
+        };
+        
+        /* Promise.all([asyncCallOne(), asyncCallTwo()])
+        .then(function(res){
+            console.log(res);
+        }, function(error){
+            console.log(error);
+        }); */
+        /* Promise.any([asyncCallOne(), asyncCallTwo()])
+        .then(function(res){
+            console.log(res);
+        }, function(error){
+            console.log(error);
+        }); */
+        Promise.race([asyncCallOne(), asyncCallTwo()])
+        .then( 
+            res =>  console.log(res), 
+            error => console.log(error)
+        );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
