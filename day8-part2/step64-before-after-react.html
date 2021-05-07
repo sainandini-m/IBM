@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root div{
+            background-color: bisque;
+            width: 800px;
+            padding: 10px;
+            margin: auto;
+        }
+        #root header, footer{
+            background-color: yellowgreen;
+            height: 30px;
+            padding: 10px;
+        }
+        #root main{
+            margin: 5px 0px;
+            background-color: tomato;
+            padding: 10px;
+        }
+        #root main article{
+            background-color: wheat;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script>
+        // let ulist = document.createElement("ul");
+        // let listItem1 = document.createElement("li");
+        //     listItem1.textContent = "List Item 1";
+        //     ulist.appendChild(listItem1);
+        // let listItem2 = document.createElement("li");
+        //     listItem2.textContent = "List Item 2";
+        //     ulist.appendChild(listItem2);
+        // let listItem3 = document.createElement("li");
+        //     listItem3.textContent = "List Item 3";
+        //     ulist.appendChild(listItem3);
+        // let listItem4 = document.createElement("li");
+        //     listItem4.textContent = "List Item 4";
+        //     ulist.appendChild(listItem4);
+        // let listItem5 = document.createElement("li");
+        //     listItem5.textContent = "List Item 5";
+        //     ulist.appendChild(listItem5);
+        // document.addEventListener("DOMContentLoaded", function(){
+        //     document.querySelector("#root").appendChild(ulist);
+        // })
+    </script>
+    <script>
+        // let ulist = React.createElement("ul", null, [
+        //     React.createElement("li", { key : 1 }, "List Item 1"),
+        //     React.createElement("li", { key : 2 }, "List Item 2"),
+        //     React.createElement("li", { key : 3 }, "List Item 3"),
+        //     React.createElement("li", { key : 4 }, "List Item 4"),
+        //     React.createElement("li", { key : 5 }, "List Item 5")
+        //     ]
+        // );
+        // document.addEventListener("DOMContentLoaded", function(){
+        //     ReactDOM.render(ulist, document.getElementById("root"));
+        // })
+
+        let webpage = React.createElement("div", null,
+                    React.createElement("header", null, "Header Text Comes Here"), 
+                    React.createElement("main", null, "Main Text Comes Here", 
+                    React.createElement("article", null, " Article Text Comes here "), 
+                    React.createElement("article", null, " Article Text Comes here ")
+                    ), 
+                    React.createElement("footer", null, "Footer Text Comes Here")
+                    );
+
+        document.addEventListener("DOMContentLoaded", function(){
+            ReactDOM.render(webpage, document.getElementById("root"));
+        });
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
