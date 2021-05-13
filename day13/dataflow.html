@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 100px;
+            margin: 20px;
+            float: left;
+            background-color: darkblue;
+            border: 1px solid transparent;
+            color: whitesmoke;
+            font-size: 20px;
+            font-family: Arial;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByTagName("button")[0]
+            .addEventListener("click", clickHandler);
+
+            setInterval(function(){
+                document.getElementById("op1").value = document.getElementById("ti1").value;
+            },1000)
+        });
+
+        function clickHandler(){
+            document.getElementById("op1").value = document.getElementById("ti1").value;
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <input type="text" name="" id="ti1">
+        <button>Send Message</button>
+    </div>
+    <div class="box">
+        Message : <output id="op1" value="hi"></output>
+    </div>
+</body>
+</html>
