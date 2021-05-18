@@ -1,0 +1,169 @@
+const express = require("express");
+let config = require("./config.json");
+const fs = require("fs");
+let app = express();
+
+let data = [];
+
+app.use(express.json());
+app.use(express.static(__dirname+"/public"));
+
+app.get("/data", function( req, res ){
+    data = JSON.parse(fs.readFileSync(__dirname+"/data/data.json"));
+    res.status(200).send(data);
+});
+app.post("/data", function( req, res ){
+   data.push(req.body);
+   fs.writeFileSync(__dirname+"/data/data.json", JSON.stringify(data));
+   console.log("data recieved", data);
+   res.redirect("/data");
+   res.send('recieved');
+});
+
+app.listen(config.port, config.host);
+console.log("Server is now live on localhost : ", config.port);
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <style>
+        h1{
+            text-align: center;
+            font-family: Trebuchet MS;
+            font-weight: bold;
+        }
+        .box{
+            overflow: auto;
+            background-color: dimgray;
+            color: floralwhite;
+            margin: auto;
+            font-family: arial;
+            font-size: 16px;
+            text-align: justify;
+            padding: 10px;
+        }
+        button{
+            width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+        .hpanel{
+            width: 270px;
+            background-color: #282828;
+            padding: 10px;
+            font-family: verdana;
+            margin: 10px;
+            float: left;
+        }
+        .hpanel .ht{
+            font-size: 18px;
+            font-weight: bold;
+            color: lightyellow;
+        }
+        .hpanel .hc{
+            font-size: 18px;
+            font-weight: bold;
+            color: lightsteelblue;
+        }
+        .hpanel .hfullname{
+            font-size: 18px;
+            font-weight: bold;
+            color: powderblue;
+        }
+    </style>
+    <script src="lib/jquery-3.6.0.js"></script>
+    <script>
+        let userCount = 0;
+        $(function(){
+            reload();
+            //----------------------------------
+            $("#addBtn").on("click", function(){
+                // username
+                // userfullname
+                // usermail
+            let tempUser =  {
+                            "id": userCount+1,
+                            "name": $("#userfullname").val(),
+                            "username": $("#username").val(),
+                            "email": $("#usermail").val()
+                            };
+            $.ajax({
+                url : "/data",
+                method : "post",
+                dataType:"json",
+                data : JSON.stringify(tempUser),
+                contentType : "application/json",
+                success : function(res){
+                    reload();
+                    $("#userfullname").val("");
+                    $("#username").val("");
+                    $("#usermail").val("")
+                },
+                error : function(){
+
+                }
+
+            })
+            });
+            //----------------------------------
+           }
+        );
+        function reload(){
+            $.ajax({
+                   url : "/data",
+                   method : "get",
+                   success : function(data, status, jqxhr){
+                        userCount = data.length;
+                        data.forEach(function(val){
+                            $(".box").append(`<div class="hpanel">
+                                                <div class="ht">${val.username}</div>
+                                                <hr>
+                                                <div class="hc">${val.id}</div>
+                                                <div class="hfullname"><span class="hfn"> ${val.name}</span> </div>
+                                                <div> ${val.email} </div>
+                                            </div>`)
+                        })
+                    },
+                    error : function(jqxhr, status, error){
+                       alert(error);
+                   }
+               })
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>AJAX JSON Data</h1>
+        <hr>
+   <div class="row">
+        <div class="mb-3">
+          <label for="username" class="form-label">User's First Name</label>
+          <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="userfullname" class="form-label">User's Full Name</label>
+          <input type="text" class="form-control" id="userfullname" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="usermail" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="usermail" aria-describedby="emailHelp">
+        </div>
+        <div class="d-grid gap-2">
+            <button id="addBtn" class="btn btn-lg  btn-primary">Add User Data</button>
+        </div>
+   </div>
+    <hr>
+    <div class="box"></div>
+    <hr>
+    <h1 id="log"></h1>
+    </div>
+</body>
+</html>
