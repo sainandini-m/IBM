@@ -1,0 +1,83 @@
+[{
+    "firstname" : "Jenila",
+    "lastname" : "S", 
+    "city" : "Chennai"
+},{
+    "firstname" : "Astha",
+    "lastname" : "Gupta", 
+    "city" : "Kolkata"
+},{
+    "firstname" : "Swasti",
+    "lastname" : "Padhi", 
+    "city" : "Bhubaneswar"
+},{
+    "firstname" : "Gargi",
+    "lastname" : "Chakraborty", 
+    "city" : "Kolkata"
+},{
+    "firstname" : "Harleen",
+    "lastname" : "Kaur", 
+    "city" : "Jaipur"
+},{
+    "firstname" : "Zareen",
+    "lastname" : "Ishtiaque", 
+    "city" : "Kolkata"
+},{
+    "firstname" : "Rachana",
+    "lastname" : "Rajesh", 
+    "city" : "Bangalore"
+},{
+    "firstname" : "Tanvee",
+    "lastname" : "Srivastava", 
+    "city" : "Faridabad"
+},{
+    "firstname" : "Yash",
+    "lastname" : "Maheshwari", 
+    "city" : "Kota"
+},{
+    "firstname" : "Sainandini",
+    "lastname" : "Mishra", 
+    "city" : "New Delhi"
+},{
+    "firstname" : "Praseeda",
+    "lastname" : "Chokkapu", 
+    "city" : "Parvathipuram"
+},{
+    "firstname" : "Amulya",
+    "lastname" : "George", 
+    "city" : "Indore"
+},{
+    "firstname" : "Jayita",
+    "lastname" : "Bhattacharyya", 
+    "city" : "Asansol"
+},
+{
+    "firstname" : "Neha",
+    "lastname" : "Ravindra", 
+    "city" : "Hubli"
+},{
+    "firstname" : "Arya",
+    "lastname" : "Ashok", 
+    "city" : "Kottayam"
+},
+{
+    "firstname" : "Baishakhi",
+    "lastname" : "Das", 
+    "city" : "Kolkata"
+},{
+    "firstname" : "Thumathi",
+    "lastname" : "Durai", 
+    "city" : "Tamil Nadu"
+},{
+    "firstname" : " Sweety ",
+    "lastname" : " Kumari ", 
+    "city" : " Faridabad "
+},{
+    "firstname" : "Shwetha",
+    "lastname" : "G.P", 
+    "city" : "Bangalore"
+},{
+    "firstname" : "Shivam",
+    "lastname" : "vatsa", 
+    "city" : "Jaipur"
+}]
