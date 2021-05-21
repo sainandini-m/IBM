@@ -16,3 +16,6 @@
 # <a href="https://forms.gle/ybv9JFJvpAW4RECK6">React Assessment Link</a>
 
 
+<hr/>
+
+# <a href="https://forms.gle/xiYqeaD5pL1PTpXh9">Training Feedback Link</a>
